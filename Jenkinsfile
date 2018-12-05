@@ -25,8 +25,7 @@ pipeline {
 				
         }
     }
-	}
-	}
+	
 	stage("Push IMB Cloud"){
 		steps{
 			sh echo 'Pushing to cloud'
