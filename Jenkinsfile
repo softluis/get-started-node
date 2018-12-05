@@ -1,5 +1,4 @@
 def scannerHome = "C:\\Users\\0101547\\Downloads\\sonar-scanner-cli-3.2.0.1227-windows\\sonar-scanner-3.2.0.1227-windows" 
-def qg = waitForQualityGate()
 pipeline {
     agent any  
     stages{
@@ -20,12 +19,15 @@ pipeline {
 }
 	stage("Quality Gate") {
             steps {
-              timeout(time: 1, unit: 'MINUTES') { 
-				if (qg.status != 'OK') {
-             error "Pipeline aborted due to quality gate failure: ${qg.status}"
-           }
+				script{
+				  timeout(time: 1, unit: 'MINUTES') {
+				   def qg = waitForQualityGate() 
+					if (qg.status != 'OK') {
+				 error "Pipeline aborted due to quality gate failure: ${qg.status}"
+			   }
         }
     }
+	}
 	}
 }
 }
