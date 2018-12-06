@@ -9,10 +9,10 @@ pipeline {
 		}
         stage('Sonarqube') {
 			
-			environment{
+			 environment{
 					
                scannerHome = tool 'Scanner'
-			   echo scannerHome
+			   
 			   }
 			   steps {
 					withSonarQubeEnv('SonarServer') {
