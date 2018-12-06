@@ -9,7 +9,8 @@ pipeline {
 		}
         stage('Sonarqube') {
             environment {
-                scannerHome = tool 'Scanner'
+               def scannerHome = tool 'Scanner'
+			   echo scannerHome
     }
                         steps {
 					
