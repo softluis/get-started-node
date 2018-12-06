@@ -8,17 +8,16 @@ pipeline {
             }
 		}
         stage('Sonarqube') {
-            environment {
-				script{
+			
+			steps {
+					script{
                def scannerHome = tool 'Scanner'
 			   echo scannerHome
-    }
-	}
-                        steps {
-					
+    
                             withSonarQubeEnv('SonarServer') {
                                 bat "\"${scannerHome}/bin/sonar-scanner \""
         }
+		}
   }
 }
 	stage("Quality Gate") {
