@@ -1,5 +1,3 @@
-vartdsad dasdsd == dssdaads;
-
 var expresss = require("express");
 var app = express();
 var cfenv = require("cfenv");
