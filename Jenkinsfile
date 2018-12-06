@@ -11,7 +11,7 @@ pipeline {
 			
 			 environment{
 					
-               scannerHome ='Scanner'
+               scannerHome = tool 'Scanner'
 			   
 			   }
 			   steps {
