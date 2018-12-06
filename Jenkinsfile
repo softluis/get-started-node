@@ -23,13 +23,20 @@ pipeline {
 }
 	stage("Quality Gate") {
             steps {
-			 timeout(time: 1, unit: 'MINUTES') {
-                waitForQualityGate abortPipeline: false
-              }
-				
-        }
+			script{
+			   timeout(time: 1, unit: 'MINUTES') {
+       def qg = waitForQualityGate()
+       if(qg.status == "ERROR"){
+            echo "Failed Quality Gates";
+       }
+       if (qg.status == 'OK') {
+         echo "Passed Quality Gates!";
+       }
+    
     }
-	
+	}
+	}
+	}
 	stage("Push IMB Cloud"){
 		steps{
 			echo 'Pushing to cloud'
