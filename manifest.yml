@@ -1,5 +1,5 @@
 ---
 applications:
- - name: GetStartedNode
+ - name: site-test
    random-route: true
-   memory: 256M
+   memory: 64M
