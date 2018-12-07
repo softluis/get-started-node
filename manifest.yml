@@ -1,4 +1,4 @@
 applications:
- - name: site-test
+ - name: site-test2
    random-route: true
    memory: 64M
