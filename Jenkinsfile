@@ -23,7 +23,7 @@ pipeline {
 }
 	stage("Quality Gate") {
             steps {
-				
+		    retry(3){	
 			script{
 			   timeout(time: 5, unit: 'MINUTES') {
        def qg = waitForQualityGate()
@@ -33,7 +33,7 @@ pipeline {
        if (qg.status == 'OK') {
          echo "Passed Quality Gates!";
        }
-    
+		}
     }
 	}
 	}
