@@ -53,7 +53,7 @@ pipeline {
 }
 		post {
 		always {
-		 slackNotifier(currentBuild.currentResult)
+		 slackSend: message
 		}
 		}
 }
