@@ -53,7 +53,7 @@ pipeline {
 }
 		post {
 		always {
-		 slackSend: message
+		 slackSend message
 		}
 		}
 }
