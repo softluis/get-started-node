@@ -52,7 +52,7 @@ pipeline {
 }
 		post {
 		always {
-		 slackSend "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n Site Softinsa Actualizado\n More info at: ${env.BUILD_URL}"
+		 slackSend "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n Site Softinsa \n More info at: ${env.BUILD_URL}"
             
             }
         }
