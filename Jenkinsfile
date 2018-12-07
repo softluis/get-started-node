@@ -21,22 +21,22 @@ pipeline {
 		}
   }
 }
-	//stage("Quality Gate") {
-          //  steps {
-		//	script{
-		//	   timeout(time: 5, unit: 'MINUTES') {
-       //def qg = waitForQualityGate()
-      // if(qg.status == "ERROR"){
-        //    echo "Failed Quality Gates";
-       //}
-       //if (qg.status == 'OK') {
-        // echo "Passed Quality Gates!";
-       //}
+	stage("Quality Gate") {
+            steps {
+			script{
+			   timeout(time: 5, unit: 'MINUTES') {
+       def qg = waitForQualityGate()
+       if(qg.status == "ERROR"){
+            echo "Failed Quality Gates";
+       }
+       if (qg.status == 'OK') {
+         echo "Passed Quality Gates!";
+       }
     
-    //}
-	//}
-	//}
-	//}
+    }
+}
+	}
+	}
 	stage("Push IMB Cloud"){
 		steps{
 			echo 'Pushing to cloud'
