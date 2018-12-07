@@ -23,6 +23,7 @@ pipeline {
 }
 	stage("Quality Gate") {
             steps {
+				retry(2){
 			script{
 			   timeout(time: 5, unit: 'MINUTES') {
        def qg = waitForQualityGate()
@@ -34,7 +35,8 @@ pipeline {
        }
     
     }
-}
+	}
+	}
 	}
 	}
 	stage("Push IMB Cloud"){
@@ -49,7 +51,7 @@ pipeline {
 		}
 	}
 }
-	post {
+		post {
 		always {
 		 slackNotifier(currentBuild.currentResult)
 		}
