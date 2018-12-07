@@ -28,7 +28,6 @@ pipeline {
        def qg = waitForQualityGate()
        if(qg.status == "ERROR"){
             echo "Failed Quality Gates";
-	     waitForQualityGate abortPipeline: true
        }
        if (qg.status == 'OK') {
          echo "Passed Quality Gates!";
@@ -41,6 +40,12 @@ pipeline {
 	stage("Push IMB Cloud"){
 		steps{
 			echo 'Pushing to cloud'
+            pushToCloudFoundry(
+                    target: 'https://api.eu-gb.bluemix.net',
+                    organization: 'luis.filipe.pereira@pt.softinsa.com',
+                    cloudSpace: 'dev',
+                    credentialsId: 'imbcloud'
+)
 		}
 	}
 }
