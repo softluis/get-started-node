@@ -23,7 +23,6 @@ pipeline {
 }
 	stage("Quality Gate") {
             steps {
-		    retry(3){	
 			script{
 			   timeout(time: 1, unit: 'MINUTES') {
        def qg = waitForQualityGate()
@@ -36,7 +35,6 @@ pipeline {
        }
 		}
     }
-	}
 	}
 	}
 	stage("Push IMB Cloud"){
