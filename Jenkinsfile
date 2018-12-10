@@ -35,7 +35,7 @@ pipeline {
        }
 		}
     }
-	}
+	//}
 	}
 	stage("Push IMB Cloud"){
 		steps{
