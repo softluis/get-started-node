@@ -15,9 +15,10 @@ pipeline {
     withSonarQubeEnv('SonarServer') {
      bat "\"${scannerHome}/bin/sonar-scanner\""
     }
+    sleep 5
    }
   }
-  sleep 5
+  
   stage("Quality Gate") {
    steps {
     script {
