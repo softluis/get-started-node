@@ -8,19 +8,16 @@ pipeline {
    }
   }
   stage('Sonarqube') {
-
    environment {
-
     scannerHome = tool 'Scanner'
-
    }
    steps {
     withSonarQubeEnv('SonarServer') {
      bat "\"${scannerHome}/bin/sonar-scanner\""
-
     }
    }
   }
+  sleep(5)
   stage("Quality Gate") {
    steps {
     script {
