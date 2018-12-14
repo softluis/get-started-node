@@ -3,7 +3,7 @@ pipeline {
  stages {
   stage('Download Repository') {
    steps {
-    checkout scm
+    git 'https://github.com/softluis/get-started-node.git'
    }
   }
   stage('Sonarqube') {
