@@ -37,7 +37,6 @@ pipeline {
   stage("Push IMB Cloud") {
    steps {
     echo 'Pushing to cloud'
-    sh 'chmod -R 755 ./*'
     cfPush(
      target: 'api.eu-gb.bluemix.net',
      organization: 'luis.filipe.pereira@pt.softinsa.com',
