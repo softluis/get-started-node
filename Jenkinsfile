@@ -1,7 +1,7 @@
 pipeline{
 	environment{
 		scannerHome = tool 'Scanner';
-		slackMet = load 'slackNotifications.groovy';
+		//slackMet = load 'slackNotifications.groovy';
 	}
 
 	agent any
