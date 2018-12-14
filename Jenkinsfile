@@ -13,7 +13,7 @@ pipeline {
    }
    steps {
     withSonarQubeEnv('SonarServer') {
-     bat "\"${scannerHome}/bin/sonar-scanner\""
+     sh "\"${scannerHome}/bin/sonar-scanner\""
     }
     sleep 5
    }
@@ -49,7 +49,7 @@ pipeline {
  }
  post {
   always {
-   slackSend "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n Site Softinsa \n More info at: ${env.BUILD_URL}"
+   slackSend "ola"//"*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n Site Softinsa \n More info at: ${env.BUILD_URL}"
 
   }
  }
