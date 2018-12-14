@@ -39,7 +39,7 @@ pipeline {
     echo 'Pushing to cloud'
     sh 'chmod -R 755 ./*'
     cfPush(
-     target: 'https://api.eu-gb.bluemix.net',
+     target: 'api.eu-gb.bluemix.net',
      organization: 'luis.filipe.pereira@pt.softinsa.com',
      cloudSpace: 'dev',
      credentialsId: 'imbcloud'
