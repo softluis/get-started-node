@@ -9,7 +9,7 @@ pipeline{
 	stages{
 	  stage('SCM') {
 		steps{
-			git 'https://github.com/softluis/Node-Pipeline.git'
+			git 'https://github.com/softluis/get-started-node.git'
 		}
 	  }
 	  stage('SonarQube analysis') {
