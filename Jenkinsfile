@@ -1,8 +1,8 @@
 pipeline {
- agent any
     environment {
-    scannerHome = tool 'Scanner'
+      scannerHome = tool 'Scanner'
    }
+ agent any
  stages {
   stage('Download Repository') {
    steps {
