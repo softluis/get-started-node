@@ -7,3 +7,9 @@ README.md
 logs
 *.log
 *.pack
+.build/*
+Packages/*
+.travis.yml
+docker-compose.yml
+Dockerfile
+*.xcodeproj/
