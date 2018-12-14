@@ -44,6 +44,7 @@ pipeline {
      cloudSpace: 'dev',
      credentialsId: 'imbcloud'
     )
+    deleteDir()
    }
   }
  }
